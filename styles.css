@@ -1,0 +1,176 @@
+/* Shared page styles for About, Impact, Sentiment pages */
+:root {
+    color-scheme: dark;
+    color: #f8fafc;
+    background: #090b21;
+    font-family: 'Inter', sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, rgba(0, 212, 255, 0.12), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(0, 255, 157, 0.08), transparent 28%),
+                #090b21;
+}
+img, iframe {
+    max-width: 100%;
+    display: block;
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(10, 10, 46, 0.92);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.container {
+    width: min(1180px, calc(100% - 2rem));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+.logo {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #e2e8f0;
+}
+.logo-icon {
+    margin-right: 0.7rem;
+}
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+.nav-links a:hover,
+.nav-links a.active {
+    color: #22d3ee;
+    transform: translateY(-1px);
+}
+section {
+    padding: 4rem 0;
+}
+.about-hero, .impact-hero, .sentiment-hero {
+    min-height: 55vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 4rem 0;
+}
+.about-hero h1, .impact-hero h1, .sentiment-hero h1 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    margin: 0 0 1rem;
+    color: #f8fafc;
+}
+.about-hero p, .impact-hero p, .sentiment-hero p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+.about-content, .impact-analysis, .sentiment-tool {
+    width: min(1180px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+.about-section, .impact-section, .tool-section, .results-section {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+.tech-grid, .applications, .sentiment-breakdown {
+    display: grid;
+    gap: 1rem;
+}
+.tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.applications {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.impact-card, .app-card, .sentiment-result, .analysis-details {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 1.5rem;
+}
+.impact-card h3, .app-card h3, .sentiment-result .result-label {
+    margin: 0 0 0.75rem;
+    color: #f8fafc;
+}
+.impact-card p, .app-card p, .analysis-details p, .sentiment-result .result-percentage {
+    color: #cbd5e1;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border: none;
+    border-radius: 999px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.btn:hover {
+    transform: translateY(-1px);
+}
+.btn-primary {
+    background: linear-gradient(135deg, #00d4ff, #00ff9d);
+    color: #020617;
+}
+.btn-secondary {
+    background: rgba(255,255,255,0.08);
+    color: #f8fafc;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #e2e8f0;
+}
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.05);
+    color: #f8fafc;
+    padding: 1rem;
+}
+.form-group textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .nav-links {
+        justify-content: center;
+    }
+    .about-hero, .impact-hero, .sentiment-hero {
+        padding: 3rem 1rem;
+    }
+}

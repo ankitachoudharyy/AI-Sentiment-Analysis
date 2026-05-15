@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutonoSentix • Sentiment Analysis Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🚗</span> AutonoSentix
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Page</a></li>
+                <li><a href="impact.html">Impact Page</a></li>
+                <li><a href="sentiment.html" class="active">Sentiment Tool</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sentiment Tool Hero -->
+    <section class="sentiment-hero">
+        <div class="container">
+            <h1>AutonoSentix Sentiment Tool</h1>
+            <p>Analyze public sentiment about autonomous systems using advanced AI and BERT-powered machine learning.</p>
+        </div>
+    </section>
+
+    <!-- Sentiment Tool -->
+    <section class="sentiment-tool">
+        <div class="container">
+            <div class="tool-container">
+                <div class="tool-section">
+                    <h2>Analyze Text Sentiment</h2>
+                    <p>Enter your text below and our AI model will analyze the sentiment regarding autonomous systems.</p>
+                    
+                    <form id="sentimentForm">
+                        <div class="form-group">
+                            <label for="sentimentText">Enter your text:</label>
+                            <textarea 
+                                id="sentimentText" 
+                                name="sentimentText" 
+                                rows="6" 
+                                placeholder="Share your thoughts about autonomous systems, self-driving cars, industrial robots, etc."
+                                required>
+                            </textarea>
+                            <small>Minimum 10 characters required</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="category">Topic Category:</label>
+                            <select id="category" name="category">
+                                <option value="general">General</option>
+                                <option value="autonomous-vehicles">Autonomous Vehicles</option>
+                                <option value="manufacturing">Manufacturing & Robots</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="employment">Employment & Economy</option>
+                                <option value="privacy">Privacy & Ethics</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Analyze Sentiment</button>
+                    </form>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <h2>Analysis Results</h2>
+                    
+                    <div class="sentiment-gauge">
+                        <div class="gauge-container">
+                            <div class="gauge-label">Overall Sentiment</div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill" id="gaugeFill"></div>
+                            </div>
+                            <div class="gauge-value" id="gaugeValue">Positive: 0%</div>
+                        </div>
+                    </div>
+
+                    <div class="sentiment-breakdown">
+                        <div class="sentiment-result positive">
+                            <div class="result-icon">😊</div>
+                            <div class="result-label">Positive</div>
+                            <div class="result-percentage" id="positivePct">0%</div>
+                        </div>
+                        <div class="sentiment-result neutral">
+                            <div class="result-icon">😐</div>
+                            <div class="result-label">Neutral</div>
+                            <div class="result-percentage" id="neutralPct">0%</div>
+                        </div>
+                        <div class="sentiment-result negative">
+                            <div class="result-icon">😞</div>
+                            <div class="result-label">Negative</div>
+                            <div class="result-percentage" id="negativePct">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-details">
+                        <h3>Key Insights</h3>
+                        <div id="insights" class="insights-list">
+                            <!-- Insights will be populated here -->
+                        </div>
+                    </div>
+
+                    <div class="analysis-details">
+                        <h3>Detected Topics</h3>
+                        <div id="topics" class="topics-list">
+                            <!-- Topics will be populated here -->
+                        </div>
+                    </div>
+
+                    <button onclick="resetForm()" class="btn btn-secondary" style="margin-top: 2rem;">Analyze Another Text</button>
+                </div>
+
+                <!-- Comparative Analysis -->
+                <div class="comparative-section" style="margin-top: 3rem; padding-top: 3rem; border-top: 2px solid #e5e7eb;">
+                    <h3>Comparative Sentiment Analysis</h3>
+                    <p>See how different groups perceive autonomous systems:</p>
+                    
+                    <div class="comparison-chart">
+                        <div class="comparison-item">
+                            <h4>Tech Enthusiasts</h4>
+                            <div class="sentiment-bar">
+                                <div class="bar-segment positive" style="width: 70%;">70%</div>
+                                <div class="bar-segment neutral" style="width: 20%;">20%</div>
+                                <div class="bar-segment negative" style="width: 10%;">10%</div>
+                            </div>
+                        </div>
+                        <div class="comparison-item">
+                            <h4>Manufacturing Workers</h4>
+                            <div class="sentiment-bar">
+                                <div class="bar-segment positive" style="width: 25%;">25%</div>
+                                <div class="bar-segment neutral" style="width: 35%;">35%</div>
+                                <div class="bar-segment negative" style="width: 40%;">40%</div>
+                            </div>
+                        </div>
+                        <div class="comparison-item">
+                            <h4>General Public</h4>
+                            <div class="sentiment-bar">
+                                <div class="bar-segment positive" style="width: 45%;">45%</div>
+                                <div class="bar-segment neutral" style="width: 35%;">35%</div>
+                                <div class="bar-segment negative" style="width: 20%;">20%</div>
+                            </div>
+                        </div>
+                        <div class="comparison-item">
+                            <h4>Policy Makers</h4>
+                            <div class="sentiment-bar">
+                                <div class="bar-segment positive" style="width: 50%;">50%</div>
+                                <div class="bar-segment neutral" style="width: 35%;">35%</div>
+                                <div class="bar-segment negative" style="width: 15%;">15%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO ENHANCEMENTS SECTION -->
+    <section id="videos" class="about-content">
+        <div class="about-section" style="text-align: center;">
+            <h2>📺 Video Learning Hub</h2>
+            <p style="color: #888;">Complete multimedia resources • Organized by topic • 7 curated videos</p>
+        </div>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 30px 0;">
+            <button onclick="filterVideos('all', this)" class="video-filter-btn active" style="padding: 8px 16px; background: #00d4ff; color: black; border: none; border-radius: 20px; cursor: pointer; font-weight: bold;">🎬 All (7)</button>
+            <button onclick="filterVideos('societal', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">🌍 Societal (2)</button>
+            <button onclick="filterVideos('ethics', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">⚖️ Ethics (2)</button>
+            <button onclick="filterVideos('technical', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">🤖 Tech (2)</button>
+            <button onclick="filterVideos('employment', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">💼 Jobs (1)</button>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0;">
+            <div class="video-card" data-category="societal" onclick="trackVideoView('How AI Impacts Society')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/t6xLo1XYZZs" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">🌍 AI Impact</p></div>
+            <div class="video-card" data-category="ethics" onclick="trackVideoView('Ethical Dilemma of Self-Driving Cars')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/ixIoDYVfKA0" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">⚖️ Ethics</p></div>
+            <div class="video-card" data-category="technical" onclick="trackVideoView('Sentiment Analysis with BERT')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/8N-nM3QW7O0" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">🤖 BERT</p></div>
+            <div class="video-card" data-category="societal" onclick="trackVideoView('Future of Autonomous Vehicles')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/s_AJSLnlOzc" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">🚗 Vehicles</p></div>
+            <div class="video-card" data-category="employment" onclick="trackVideoView('Automation and Jobs')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/7Pq-S557XQU" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">💼 Jobs</p></div>
+            <div class="video-card" data-category="ethics" onclick="trackVideoView('AI Bias and Fairness')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/gohJEVWuA8M" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">🎯 Bias</p></div>
+            <div class="video-card" data-category="technical" onclick="trackVideoView('NLP and Transformers')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/SyksWjvNHqo" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">📊 NLP</p></div>
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; margin-top: 30px;">
+            <h3 style="text-align: center; margin-bottom: 16px;">📊 Progress</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; text-align: center;">
+                <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px;"><div style="font-size: 20px; font-weight: bold; color: #00d4ff;" id="totalViews">0</div><div style="font-size: 10px; color: #888;">Videos</div></div>
+                <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px;"><div style="font-size: 20px; font-weight: bold; color: #00ff9d;" id="totalTime">0</div><div style="font-size: 10px; color: #888;">Min</div></div>
+                <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px;"><div style="font-size: 20px; font-weight: bold; color: #facc15;" id="completionRate">0%</div><div style="font-size: 10px; color: #888;">Done</div></div>
+                <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px;"><div style="font-size: 20px; font-weight: bold; color: #c084fc;" id="topicsCovered">0</div><div style="font-size: 10px; color: #888;">Topics</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>Analyzing the intersection of AI, autonomous systems, and society.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="impact.html">Impact Analysis</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI Autonomous Systems Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Sentiment analysis logic
+        document.getElementById('sentimentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const text = document.getElementById('sentimentText').value;
+            const category = document.getElementById('category').value;
+            
+            if (text.length < 10) {
+                alert('Please enter at least 10 characters');
+                return;
+            }
+            
+            // Simulate sentiment analysis
+            const sentiment = analyzeSentiment(text);
+            
+            // Display results
+            displayResults(sentiment);
+        });
+        
+        function analyzeSentiment(text) {
+            // Simple sentiment analysis simulation
+            const lowerText = text.toLowerCase();
+            
+            // Positive keywords
+            const positiveWords = ['great', 'good', 'excellent', 'amazing', 'beneficial', 'innovative', 'progress', 'efficient', 'improve', 'helpful', 'fantastic', 'wonderful', 'promising', 'opportunities'];
+            
+            // Negative keywords
+            const negativeWords = ['bad', 'terrible', 'awful', 'harmful', 'dangerous', 'concern', 'risk', 'job loss', 'unemployment', 'privacy', 'threat', 'problem', 'fail', 'worry', 'fear', 'negative'];
+            
+            let positiveCount = 0;
+            let negativeCount = 0;
+            
+            positiveWords.forEach(word => {
+                const regex = new RegExp('\\b' + word + '\\b', 'g');
+                const matches = text.match(regex);
+                positiveCount += matches ? matches.length : 0;
+            });
+            
+            negativeWords.forEach(word => {
+                const regex = new RegExp('\\b' + word + '\\b', 'g');
+                const matches = text.match(regex);
+                negativeCount += matches ? matches.length : 0;
+            });
+            
+            const total = positiveCount + negativeCount;
+            let positive, negative, neutral;
+            
+            if (total === 0) {
+                positive = 40;
+                negative = 20;
+                neutral = 40;
+            } else {
+                positive = Math.round((positiveCount / (positiveCount + negativeCount)) * 100 * 0.6 + 20);
+                negative = Math.round((negativeCount / (positiveCount + negativeCount)) * 100 * 0.6 + 15);
+                neutral = 100 - positive - negative;
+            }
+            
+            return {
+                positive,
+                neutral,
+                negative,
+                positiveCount,
+                negativeCount
+            };
+        }
+        
+        function displayResults(sentiment) {
+            document.getElementById('resultsSection').style.display = 'block';
+            
+            // Update gauge
+            const gaugeFill = document.getElementById('gaugeFill');
+            gaugeFill.style.width = sentiment.positive + '%';
+            gaugeFill.className = 'gauge-fill ' + getSentimentClass(sentiment.positive);
+            
+            document.getElementById('gaugeValue').textContent = 
+                sentiment.positive > 60 ? 'Positive: ' + sentiment.positive + '%' :
+                sentiment.negative > 60 ? 'Negative: ' + sentiment.negative + '%' :
+                'Neutral: ' + sentiment.neutral + '%';
+            
+            // Update percentages
+            document.getElementById('positivePct').textContent = sentiment.positive + '%';
+            document.getElementById('neutralPct').textContent = sentiment.neutral + '%';
+            document.getElementById('negativePct').textContent = sentiment.negative + '%';
+            
+            // Generate insights
+            const insights = generateInsights(sentiment);
+            const insightsList = insights.map(i => '<div class="insight-item">' + i + '</div>').join('');
+            document.getElementById('insights').innerHTML = insightsList;
+            
+            // Generate topics
+            const topics = generateTopics(document.getElementById('sentimentText').value);
+            const topicsList = topics.map(t => '<span class="topic-tag">' + t + '</span>').join('');
+            document.getElementById('topics').innerHTML = topicsList;
+            
+            // Scroll to results
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function getSentimentClass(positive) {
+            if (positive > 60) return 'positive';
+            if (positive < 40) return 'negative';
+            return 'neutral';
+        }
+        
+        function generateInsights(sentiment) {
+            const insights = [];
+            if (sentiment.positive > 60) {
+                insights.push('🟢 Overall positive sentiment detected');
+                insights.push('Users recognize benefits and potential of autonomous systems');
+            } else if (sentiment.negative > 60) {
+                insights.push('🔴 Overall negative sentiment detected');
+                insights.push('Concerns about risks, job displacement, or privacy issues');
+            } else {
+                insights.push('🟡 Balanced sentiment detected');
+                insights.push('Text shows both positive and negative perspectives on the topic');
+            }
+            insights.push('Text length: ' + document.getElementById('sentimentText').value.length + ' characters');
+            return insights;
+        }
+        
+        function generateTopics(text) {
+            const topics = new Set();
+            const lowerText = text.toLowerCase();
+            
+            if (lowerText.includes('autonomous vehicle') || lowerText.includes('self-driving') || lowerText.includes('car')) topics.add('Autonomous Vehicles');
+            if (lowerText.includes('robot') || lowerText.includes('manufacturing')) topics.add('Manufacturing');
+            if (lowerText.includes('doctor') || lowerText.includes('medical') || lowerText.includes('health')) topics.add('Healthcare');
+            if (lowerText.includes('job') || lowerText.includes('employment') || lowerText.includes('work')) topics.add('Employment');
+            if (lowerText.includes('privacy') || lowerText.includes('data') || lowerText.includes('security')) topics.add('Privacy');
+            if (lowerText.includes('ethic') || lowerText.includes('moral') || lowerText.includes('responsibility')) topics.add('Ethics');
+            if (lowerText.includes('future') || lowerText.includes('technology')) topics.add('Technology');
+            if (lowerText.includes('economy') || lowerText.includes('cost') || lowerText.includes('profit')) topics.add('Economics');
+            
+            return Array.from(topics).length > 0 ? Array.from(topics) : ['General Discussion'];
+        }
+        
+        function resetForm() {
+            document.getElementById('sentimentForm').reset();
+            document.getElementById('resultsSection').style.display = 'none';
+            document.getElementById('sentimentText').focus();
+        }
+    </script>
+</body>
+</html>

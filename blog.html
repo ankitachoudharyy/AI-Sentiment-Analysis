@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutonoSentix • Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🚗</span> AutonoSentix
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Page</a></li>
+                <li><a href="impact.html">Impact Page</a></li>
+                <li><a href="sentiment.html">Sentiment Tool</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="about-hero">
+        <div class="container">
+            <h1>AutonoSentix Blog</h1>
+            <p>Insights on autonomous systems, sentiment analysis, AI ethics, and the future of intelligent technology.</p>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <div class="about-section">
+            <h2>Latest Articles</h2>
+            <div class="tech-grid">
+                <div class="impact-card">
+                    <h3>🧠 How BERT Improves Sentiment Detection</h3>
+                    <p>Explore how transformer models like BERT deliver more accurate sentiment predictions for opinions on autonomous systems.</p>
+                </div>
+                <div class="impact-card">
+                    <h3>🌐 Public Trust in Self-Driving Vehicles</h3>
+                    <p>Learn about the key factors shaping trust and acceptance of autonomous driving technology across communities.</p>
+                </div>
+                <div class="impact-card">
+                    <h3>⚖️ Ethical Design for Autonomous AI</h3>
+                    <p>Read about the best practices for building responsible autonomous systems that prioritize fairness, safety, and transparency.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Research Notes</h2>
+            <p>AutonoSentix combines machine learning, public sentiment data, and ethical analysis to help stakeholders understand the societal impact of autonomous technologies.</p>
+            <ul class="approach-list">
+                <li><strong>Model Explainability:</strong> Interpreting AI outputs for non-technical audiences.</li>
+                <li><strong>Data Privacy:</strong> Respecting privacy while analyzing social feedback.</li>
+                <li><strong>Real-Time Monitoring:</strong> Tracking sentiment changes as autonomous systems evolve.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- VIDEO ENHANCEMENTS SECTION -->
+    <section id="videos" class="about-content">
+        <div class="about-section" style="text-align: center;">
+            <h2>📺 Video Learning Hub</h2>
+            <p style="color: #888;">Complete multimedia resources • 7 curated videos</p>
+        </div>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 30px 0;">
+            <button onclick="filterVideos('all', this)" class="video-filter-btn active" style="padding: 8px 16px; background: #00d4ff; color: black; border: none; border-radius: 20px; cursor: pointer; font-weight: bold;">🎬 All</button>
+            <button onclick="filterVideos('societal', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">🌍 Societal</button>
+            <button onclick="filterVideos('ethics', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">⚖️ Ethics</button>
+            <button onclick="filterVideos('technical', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">🤖 Tech</button>
+            <button onclick="filterVideos('employment', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">💼 Jobs</button>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 30px 0;">
+            <div class="video-card" data-category="societal" onclick="trackVideoView('How AI Impacts Society')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 8px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/t6xLo1XYZZs" allowfullscreen></iframe></div><p style="margin-top: 8px; font-weight: bold; font-size: 13px; margin: 8px 0 0 0;">How AI is Impacting Society</p></div>
+            <div class="video-card" data-category="ethics" onclick="trackVideoView('Ethical Dilemma of Self-Driving Cars')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 8px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/ixIoDYVfKA0" allowfullscreen></iframe></div><p style="margin-top: 8px; font-weight: bold; font-size: 13px; margin: 8px 0 0 0;">Ethical Dilemmas</p></div>
+            <div class="video-card" data-category="technical" onclick="trackVideoView('Sentiment Analysis with BERT')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 8px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/8N-nM3QW7O0" allowfullscreen></iframe></div><p style="margin-top: 8px; font-weight: bold; font-size: 13px; margin: 8px 0 0 0;">BERT Analysis</p></div>
+            <div class="video-card" data-category="societal" onclick="trackVideoView('Future of Autonomous Vehicles')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 8px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/s_AJSLnlOzc" allowfullscreen></iframe></div><p style="margin-top: 8px; font-weight: bold; font-size: 13px; margin: 8px 0 0 0;">Public Perception</p></div>
+            <div class="video-card" data-category="employment" onclick="trackVideoView('Automation and Jobs')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 8px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/7Pq-S557XQU" allowfullscreen></iframe></div><p style="margin-top: 8px; font-weight: bold; font-size: 13px; margin: 8px 0 0 0;">Jobs Impact</p></div>
+            <div class="video-card" data-category="ethics" onclick="trackVideoView('AI Bias and Fairness')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 8px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/gohJEVWuA8M" allowfullscreen></iframe></div><p style="margin-top: 8px; font-weight: bold; font-size: 13px; margin: 8px 0 0 0;">AI Bias</p></div>
+            <div class="video-card" data-category="technical" onclick="trackVideoView('NLP and Transformers')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 8px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/SyksWjvNHqo" allowfullscreen></iframe></div><p style="margin-top: 8px; font-weight: bold; font-size: 13px; margin: 8px 0 0 0;">Transformers</p></div>
+        </div>
+    </section>
+
+    <script>
+        function filterVideos(category, button) {
+            const cards = document.querySelectorAll('.video-card')
+            const buttons = document.querySelectorAll('.video-filter-btn')
+            
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category') || 'all'
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block'
+                } else {
+                    card.style.display = 'none'
+                }
+            })
+            
+            buttons.forEach(btn => {
+                btn.style.background = 'rgba(255,255,255,0.1)'
+                btn.style.color = 'white'
+            })
+            
+            if (button) {
+                button.style.background = '#00d4ff'
+                button.style.color = 'black'
+            }
+        }
+        
+        function trackVideoView(videoTitle) {
+            let videoViews = JSON.parse(localStorage.getItem('videoViews')) || {}
+            let videoWatched = JSON.parse(localStorage.getItem('videosWatched')) || []
+            
+            videoViews[videoTitle] = (videoViews[videoTitle] || 0) + 1
+            if (!videoWatched.includes(videoTitle)) {
+                videoWatched.push(videoTitle)
+            }
+            
+            localStorage.setItem('videoViews', JSON.stringify(videoViews))
+            localStorage.setItem('videosWatched', JSON.stringify(videoWatched))
+            console.log('📊 Tracked:', videoTitle)
+        }
+    </script>
+</body>
+</html>

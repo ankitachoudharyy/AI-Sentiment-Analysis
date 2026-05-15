@@ -1,0 +1,27 @@
+[project]
+name = "autonosentix"
+version = "0.1.0"
+description = "AI-Powered Autonomous Systems Sentiment Analysis"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.35.0",
+    "peft>=0.7.0",
+    "datasets>=2.14.0",
+    "evaluate>=0.4.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "accelerate>=0.24.0",
+    "bitsandbytes>=0.41.0",
+    "flask>=3.0.0",
+    "flask-cors>=4.0.0",
+    "python-dotenv>=1.0.0"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
