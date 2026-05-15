@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutonoSentix • About Autonomous Systems</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🚗</span> AutonoSentix
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Page</a></li>
+                <li><a href="impact.html">Impact Page</a></li>
+                <li><a href="sentiment.html">Sentiment Tool</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About AutonoSentix</h1>
+            <p>Exploring the technology, implications, and future of autonomous systems in society through AI-driven sentiment intelligence.</p>
+        </div>
+    </section>
+
+    <!-- Main About Content -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-section">
+                <h2>What Are Autonomous Systems?</h2>
+                <p>Autonomous systems are computer-controlled systems capable of performing tasks with minimal human intervention. They use artificial intelligence, machine learning, and sensor technologies to perceive their environment, make decisions, and take actions independently.</p>
+                <p>From self-driving cars to industrial robots, autonomous systems are increasingly becoming part of our daily lives, transforming industries and reshaping how we work and live.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Key Technologies</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h3>Machine Learning</h3>
+                        <p>Algorithms that enable systems to learn from data and improve performance without explicit programming.</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Computer Vision</h3>
+                        <p>Technology that allows systems to interpret and understand visual information from the world.</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Natural Language Processing</h3>
+                        <p>AI capability to understand and process human language for communication and analysis.</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Sensor Networks</h3>
+                        <p>Systems of sensors that collect real-time data about the environment and system status.</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Decision Algorithms</h3>
+                        <p>Intelligent systems that process data and make real-time decisions based on learned patterns.</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>Edge Computing</h3>
+                        <p>Processing data locally on devices for faster response times and reduced latency.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Mission</h2>
+                <p>We are committed to providing transparent, data-driven analysis of autonomous systems and their impact on society. Through advanced AI models and sentiment analysis, we help stakeholders understand public perception, societal implications, and ethical considerations surrounding autonomous technologies.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Applications of Autonomous Systems</h2>
+                <div class="applications">
+                    <div class="app-card">
+                        <h3>Transportation</h3>
+                        <p>Autonomous vehicles revolutionizing logistics and personal mobility</p>
+                    </div>
+                    <div class="app-card">
+                        <h3>Healthcare</h3>
+                        <p>Medical robots and diagnostic systems improving patient care</p>
+                    </div>
+                    <div class="app-card">
+                        <h3>Manufacturing</h3>
+                        <p>Industrial robots enhancing production efficiency and quality</p>
+                    </div>
+                    <div class="app-card">
+                        <h3>Agriculture</h3>
+                        <p>Autonomous systems optimizing farming and resource management</p>
+                    </div>
+                    <div class="app-card">
+                        <h3>Security</h3>
+                        <p>Surveillance and monitoring systems protecting people and assets</p>
+                    </div>
+                    <div class="app-card">
+                        <h3>Exploration</h3>
+                        <p>Robots exploring dangerous environments and space</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Approach</h2>
+                <p>We use advanced artificial intelligence models to analyze vast amounts of data, including:</p>
+                <ul class="approach-list">
+                    <li><strong>Sentiment Analysis:</strong> Understanding public opinion through NLP and machine learning</li>
+                    <li><strong>Trend Detection:</strong> Identifying emerging patterns in technology adoption and perception</li>
+                    <li><strong>Impact Metrics:</strong> Quantifying economic, social, and environmental effects</li>
+                    <li><strong>Ethical Evaluation:</strong> Assessing moral implications and societal risks</li>
+                    <li><strong>Comparative Analysis:</strong> Cross-regional and temporal comparisons of public sentiment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO ENHANCEMENTS SECTION -->
+    <section id="videos" class="about-content">
+        <div class="about-section" style="text-align: center;">
+            <h2>📺 Video Learning Hub</h2>
+            <p style="color: #888;">Complete multimedia resources • Organized by topic • 7 curated videos</p>
+        </div>
+        
+        <!-- Video Category Tabs -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 30px 0;">
+            <button onclick="filterVideos('all', this)" class="video-filter-btn active" style="padding: 8px 16px; background: #00d4ff; color: black; border: none; border-radius: 20px; cursor: pointer; font-weight: bold;">🎬 All Videos (7)</button>
+            <button onclick="filterVideos('societal', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">🌍 Societal Impact (2)</button>
+            <button onclick="filterVideos('ethics', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">⚖️ Ethics & Policy (2)</button>
+            <button onclick="filterVideos('technical', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">🤖 Technical (2)</button>
+            <button onclick="filterVideos('employment', this)" class="video-filter-btn" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 20px; cursor: pointer;">💼 Employment (1)</button>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0;">
+            <div class="video-card" data-category="societal" onclick="trackVideoView('How AI Impacts Society')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/t6xLo1XYZZs" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">🌍 How AI is Impacting Society</p><p style="font-size: 12px; color: #888;">Crash Course overview • 11 min</p></div>
+            <div class="video-card" data-category="ethics" onclick="trackVideoView('Ethical Dilemma of Self-Driving Cars')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/ixIoDYVfKA0" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">⚖️ Ethical Dilemmas</p><p style="font-size: 12px; color: #888;">TED-Ed • 6 min</p></div>
+            <div class="video-card" data-category="technical" onclick="trackVideoView('Sentiment Analysis with BERT')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/8N-nM3QW7O0" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">🤖 BERT Analysis</p><p style="font-size: 12px; color: #888;">Hugging Face • 15 min</p></div>
+            <div class="video-card" data-category="societal" onclick="trackVideoView('Future of Autonomous Vehicles')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/s_AJSLnlOzc" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">🚗 Public Perception</p><p style="font-size: 12px; color: #888;">UCSD • 9 min</p></div>
+            <div class="video-card" data-category="employment" onclick="trackVideoView('Automation and Jobs')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/7Pq-S557XQU" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">💼 Jobs Impact</p><p style="font-size: 12px; color: #888;">VOX • 7 min</p></div>
+            <div class="video-card" data-category="ethics" onclick="trackVideoView('AI Bias and Fairness')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/gohJEVWuA8M" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">🎯 AI Bias</p><p style="font-size: 12px; color: #888;">Stanford • 8 min</p></div>
+            <div class="video-card" data-category="technical" onclick="trackVideoView('NLP and Transformers')" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px; background: rgba(0,0,0,0.3);"><div style="position: relative; padding-top: 56.25%; background: #000; border-radius: 12px; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/SyksWjvNHqo" allowfullscreen></iframe></div><p style="margin-top: 12px; font-weight: bold; font-size: 14px;">📊 Transformers</p><p style="font-size: 12px; color: #888;">Statquest • 12 min</p></div>
+        </div>
+        
+        <!-- Video Analytics -->
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; margin-top: 30px;">
+            <h3 style="font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 24px;">📊 Playlist Progress</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; text-align: center;">
+                <div style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 12px;"><div style="font-size: 28px; font-weight: bold; color: #00d4ff;" id="totalViews">0</div><div style="font-size: 11px; color: #888; margin-top: 8px;">Videos</div></div>
+                <div style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 12px;"><div style="font-size: 28px; font-weight: bold; color: #00ff9d;" id="totalTime">0</div><div style="font-size: 11px; color: #888; margin-top: 8px;">Minutes</div></div>
+                <div style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 12px;"><div style="font-size: 28px; font-weight: bold; color: #facc15;" id="completionRate">0%</div><div style="font-size: 11px; color: #888; margin-top: 8px;">Completion</div></div>
+                <div style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 12px;"><div style="font-size: 28px; font-weight: bold; color: #c084fc;" id="topicsCovered">0</div><div style="font-size: 11px; color: #888; margin-top: 8px;">Topics</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>Analyzing the intersection of AI, autonomous systems, and society.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="impact.html">Impact Analysis</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI Autonomous Systems Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
